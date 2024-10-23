@@ -1,0 +1,45 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@font-face {
+  font-family: "BeVietnamPro";
+  src: local("BeVietnamPro"),
+  url("./assets/fonts/BeVietnamPro-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "BeVietnamProBold";
+  src: local("BeVietnamProBold"),
+  url("./assets/fonts/BeVietnamPro-Bold.ttf") format("truetype");
+}
+
+:root{
+  --font_regular: "BeVietnamPro";
+  --font_bold: "BeVietnamProBold";
+}
