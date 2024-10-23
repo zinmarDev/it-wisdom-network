@@ -113,8 +113,8 @@ class Home extends React.Component {
                                     titleByLanguage[selectedLanguage].map(
                                         (language, ind) =>
                                             <div key={ind}
-                                                 onClick={() => this.handleSelectedOption(language.value)}
-                                                 className={`py-3 hover:bg-activePrimary hover:text-white px-5 ${selectedMenuTitle === language.value && 'bg-activePrimary text-black font-black font-semibold'}`}>
+                                                 onClick={() => this.handleSelectedOption(language.label)}
+                                                 className={`py-3 hover:bg-activePrimary hover:text-white px-5 ${selectedMenuTitle === language.label && 'bg-activePrimary text-black font-black font-semibold'}`}>
                                                 {language.label}
                                             </div>
                                     )
