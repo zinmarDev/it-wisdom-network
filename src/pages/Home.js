@@ -1,5 +1,20 @@
 import React from "react";
 import logo from "../assets/ItNetworkLogo.jpg"
+import {FaAngleDoubleLeft, FaAngleDoubleRight} from "react-icons/fa";
+import ImgResult1 from "../assets/1.png";
+
+const codeStringArrayForHTML = [
+    "<!DOCTYPE html>\n" +
+    "<html>\n" +
+    "<head>\n" +
+    "\t<title></title>\n" +
+    "</head>\n" +
+    "<body>\n" +
+    "\t<h1>Heading for h1</h1>\n" +
+    "\t<h2>Heading for h2</h2>\n" +
+    "</body>\n" +
+    "</html>"
+]
 
 class Home extends React.Component {
 
@@ -18,7 +33,17 @@ class Home extends React.Component {
                         label: "Installation",
                         value: "installation",
                         selected: false,
-                    }
+                    },
+                    {
+                        label: "Guide to File Creation",
+                        value: "fileCreation",
+                        selected: false,
+                    },
+                    {
+                        label: "HTML Heading",
+                        value: "heading",
+                        selected: false,
+                    },
                 ],
                 "reactjs": [],
                 "typescript": [],
@@ -31,13 +56,37 @@ class Home extends React.Component {
     handleClickTitle(value) {
         this.setState({
             selectedLanguage: value,
+            openMenu: false,
+            selectedMenuTitle: "Introduction",
         })
     }
-    handleSelectedOption(title){
+
+    handleSelectedOption(title) {
         this.setState({
             selectedMenuTitle: title,
             openMenu: false,
         })
+    }
+
+    handleCopyCode(codeString) {
+        navigator.clipboard.writeText(codeString)
+            .then(() => {
+                //alert('Code copied to clipboard!');
+            })
+            .catch(err => {
+                console.error('Could not copy code: ', err);
+            });
+    }
+
+    handleCodeDisplay(codeString) {
+        return (
+            <div style={{
+                overflowX: 'auto',
+                whiteSpace: 'pre-wrap'
+            }}>
+                <code>{codeString}</code>
+            </div>
+        )
     }
 
     render() {
@@ -48,7 +97,7 @@ class Home extends React.Component {
                 <div className={`w-full flex fixed justify-between z-50  top-0`}>
                     <div className={`w-2/12 bg-white text-black px-1 md:px-10`}>
                         <div className={`flex md:gap-x-4 justify-center items-center pt-2`}>
-                            <img onClick={()=> this.setState({openMenu: !openMenu})} src={logo} className={`w-10 h-10 `}/>
+                            <img src={logo} className={`w-10 h-10 `}/>
                             <div
                                 className={`uppercase text-center hidden md:block font-bold`}>{selectedLanguage} {"Tutorial"}</div>
                         </div>
@@ -83,9 +132,43 @@ class Home extends React.Component {
                     className={`w-full fixed top-14 flex justify-center bg-secondary text-white font-bold h-7 border-t border-b border-solid border-primary`}>
                     <div>IT Wisdom Network</div>
                 </div>
-                <div className={`w-full flex justify-between bg-white text-black overflow-hidden mt-14 font-medium`}>
+                <div className={`md:hidden z-10 top-20 mt-14`}>
+                    <div className={`fixed`}>
+                        {
+                            openMenu ?
+                                <FaAngleDoubleLeft onClick={() => this.setState({openMenu: !openMenu})}
+                                                   className={`text-white ml-2 h-7 cursor-pointer`}/>
+                                :
+                                <FaAngleDoubleRight onClick={() => this.setState({openMenu: !openMenu})}
+                                                    className={`text-white ml-2 h-7 cursor-pointer`}/>
+                        }
+                    </div>
+                </div>
+                {
+                    openMenu &&
+                    <div className={`md:hidden z-20 top-20 mt-1.5 w-10/12 shadow-2xl absolute bg-white`}>
+                        {
+                            titleByLanguage[selectedLanguage].length === 0 ?
+                                <div className={`px-5 py-3`}>Coming soon...</div>
+                                :
+                                titleByLanguage[selectedLanguage].map(
+                                    (language, ind) =>
+                                        <div key={ind}
+                                             onClick={() => this.handleSelectedOption(language.label)}
+                                             className={`py-3 hover:bg-activePrimary hover:text-white px-5 ${selectedMenuTitle === language.label && 'bg-activePrimary text-black font-black font-semibold'}`}>
+                                            {language.label}
+                                        </div>
+                                )
+
+                        }
+                    </div>
+                }
+                <div className={`md:hidden z-10 mt-7`}>
+
+                </div>
+                <div className={`w-full flex justify-between text-black overflow-y-auto py-4 font-medium h-fit`}>
                     <div
-                        className={`w-2/12 hidden md:block bg-white text-black h-screen py-10 overflow-auto border-r-2 border-primary`}>
+                        className={`w-2/12 hidden md:block bg-white text-black h-screen overflow-auto border-r-2 border-primary`}>
                         <div className={``}>
                             {
                                 titleByLanguage[selectedLanguage].length === 0 ?
@@ -94,8 +177,8 @@ class Home extends React.Component {
                                     titleByLanguage[selectedLanguage].map(
                                         (language, ind) =>
                                             <div key={ind}
-                                                 onClick={()=> this.handleSelectedOption(language.label)}
-                                                 className={`py-3 hover:bg-activePrimary hover:text-white px-5 ${selectedMenuTitle === language.label && 'bg-activePrimary text-black font-black font-semibold'}`}>
+                                                 onClick={() => this.handleSelectedOption(language.label)}
+                                                 className={`py-3 hover:bg-activePrimary hover:text-white px-5 ${selectedMenuTitle === language.label && 'bg-activePrimary text-black font-black'}`}>
                                                 {language.label}
                                             </div>
                                     )
@@ -103,38 +186,83 @@ class Home extends React.Component {
                             }
                         </div>
                     </div>
-                    {
-                        openMenu &&
-                        <div className={`md:hidden z-10 top-14 w-10/12 shadow-2xl absolute bg-white`}>
-                            {
-                                titleByLanguage[selectedLanguage].length === 0 ?
-                                    <div className={`px-5 py-3`}>Coming soon...</div>
-                                    :
-                                    titleByLanguage[selectedLanguage].map(
-                                        (language, ind) =>
-                                            <div key={ind}
-                                                 onClick={() => this.handleSelectedOption(language.label)}
-                                                 className={`py-3 hover:bg-activePrimary hover:text-white px-5 ${selectedMenuTitle === language.label && 'bg-activePrimary text-black font-black font-semibold'}`}>
-                                                {language.label}
-                                            </div>
-                                    )
+                    <div className={`w-full md:w-10/12 px-4 md:px-10 text-black`}>
+                        {
+                            selectedLanguage === "html" ?
+                                <>
+                                    <div
+                                        className={`text-xl md:text-2xl font-semibold mb-4`}>{selectedMenuTitle}</div>
+                                    <>
+                                        {
+                                            selectedMenuTitle === "Introduction" ?
+                                                <div>
+                                                    <div>Stand for : Hyper Text Market Language</div>
+                                                </div>
+                                                :
+                                                selectedMenuTitle === "Installation" ?
+                                                    <div>
+                                                        <iframe
+                                                            src="https://www.youtube.com/embed/NLEHISMioQw?si=zW4VrRx7Rd4ju2s-"
+                                                            title="How to install Sublime Text?"
+                                                            className={`w-full md:w-10/12 min-h-[40vh]`}
+                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                            referrerPolicy="strict-origin-when-cross-origin"
+                                                            allowFullScreen></iframe>
+                                                    </div>
+                                                    :
+                                                    selectedMenuTitle === "Guide to File Creation" ?
+                                                        <div>
+                                                            <iframe
+                                                                src="https://www.youtube.com/embed/1AqvGotyxWI?si=MrxHucop7hO9WCAT"
+                                                                title="How to use Sublime Text for HTML file?"
+                                                                className={`w-full md:w-10/12 min-h-[40vh]`}
+                                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                referrerPolicy="strict-origin-when-cross-origin"
+                                                                allowFullScreen></iframe>
+                                                        </div>
+                                                        :
+                                                        selectedMenuTitle === "HTML Heading" ?
+                                                            <div>
+                                                                <iframe
+                                                                    src="https://www.youtube.com/embed/5C6EawooflQ?si=pOTS76STe3TsE9rm"
+                                                                    title="Header"
+                                                                    className={`w-full md:w-10/12 min-h-[40vh]`}
+                                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                    referrerPolicy="strict-origin-when-cross-origin"
+                                                                    allowFullScreen></iframe>
 
-                            }
-                        </div>
-                    }
-                    <div className={`w-full md:w-10/12 px-4 md:px-10 py-10 text-black`}>
-                        <div className={`text-xl md:text-2xl font-semibold mb-4`}>{selectedMenuTitle}</div>
-                        <div>
-                            {
-                                selectedMenuTitle === "Installation" &&
-                                <iframe
-                                        src="https://www.youtube.com/embed/NLEHISMioQw?si=zW4VrRx7Rd4ju2s-"
-                                        title="How to install Sublime Text?"
-                                        className={`w-full md:w-10/12 min-h-[40vh]`}
-                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                        referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
-                            }
-                        </div>
+                                                                <div className={`my-4`}>
+                                                                    <h3 className={`my-4 font-bold`}>HTML Code
+                                                                        Example</h3>
+                                                                    <div
+                                                                        className={`border-2 border-gray-300 rounded-md`}>
+                                                                        <div
+                                                                            className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
+                                                                            <div>HTML</div>
+                                                                            <div
+                                                                                className={`hover:bg-gray-100 font-medium cursor-pointer`}
+                                                                                onClick={() => this.handleCopyCode(codeStringArrayForHTML[0])}>Copy
+                                                                            </div>
+                                                                        </div>
+                                                                        <div className={`p-4`}>
+                                                                            {this.handleCodeDisplay(codeStringArrayForHTML[0])}
+                                                                        </div>
+                                                                    </div>
+
+                                                                    <h3 className={`my-4 font-bold`}>Result :</h3>
+                                                                    <div className={`border-2 border-gray-300 rounded-md`}>
+                                                                        <img src={ImgResult1}/>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            :
+                                                            <div className={`text-center`}>Coming Soon...</div>
+                                        }
+                                    </>
+                                </>
+                                :
+                                <div className={`text-center`}>Coming Soon...</div>
+                        }
                     </div>
                 </div>
             </div>
