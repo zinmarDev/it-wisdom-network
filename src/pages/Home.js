@@ -163,12 +163,12 @@ class Home extends React.Component {
                         }
                     </div>
                 }
-                <div className={`md:hidden z-10 mt-7`}>
+                <div className={`z-10 mt-7 md:mt-16`}>
 
                 </div>
-                <div className={`w-full flex justify-between text-black overflow-y-auto py-4 font-medium h-fit`}>
+                <div className={`w-full flex justify-between text-black py-4 font-medium`}>
                     <div
-                        className={`w-2/12 hidden md:block bg-white text-black h-screen overflow-auto border-r-2 border-primary`}>
+                        className={`w-2/12 hidden md:block bg-white top-20 mt-1 text-black h-screen fixed overflow-auto border-r-2 border-primary`}>
                         <div className={``}>
                             {
                                 titleByLanguage[selectedLanguage].length === 0 ?
@@ -186,7 +186,7 @@ class Home extends React.Component {
                             }
                         </div>
                     </div>
-                    <div className={`w-full md:w-10/12 px-4 md:px-10 text-black`}>
+                    <div className={`w-full md:w-10/12 px-4 md:ml-[15%] md:mt-5 md:absolute md:px-10 text-black overflow-y-auto overflow-hidden`}>
                         {
                             selectedLanguage === "html" ?
                                 <>
