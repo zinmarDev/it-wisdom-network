@@ -12,6 +12,10 @@ const codeStringArrayForHTML = [
     "<body>\n" +
     "\t<h1>Heading for h1</h1>\n" +
     "\t<h2>Heading for h2</h2>\n" +
+    "\t<h3>Heading for h3</h3>\n" +
+    "\t<h4>Heading for h4</h4>\n" +
+    "\t<h5>Heading for h5</h5>\n" +
+    "\t<h6>Heading for h6</h6>\n" +
     "</body>\n" +
     "</html>"
 ]
@@ -42,6 +46,11 @@ class Home extends React.Component {
                     {
                         label: "HTML Heading",
                         value: "heading",
+                        selected: false,
+                    },
+                    {
+                        label: "HTML Formatting",
+                        value: "formatting",
                         selected: false,
                     },
                 ],
@@ -129,7 +138,7 @@ class Home extends React.Component {
                     </div>
                 </div>
                 <div
-                    className={`w-full fixed top-14 flex justify-center bg-secondary text-white font-bold h-7 border-t border-b border-solid border-primary`}>
+                    className={`w-full fixed top-14 z-10 flex justify-center bg-secondary text-white font-bold h-7 border-t border-b border-solid border-primary`}>
                     <div>IT Wisdom Network</div>
                 </div>
                 <div className={`md:hidden z-10 top-20 mt-14`}>
@@ -186,7 +195,7 @@ class Home extends React.Component {
                             }
                         </div>
                     </div>
-                    <div className={`w-full md:w-10/12 px-4 md:ml-[15%] md:mt-5 md:absolute md:px-10 text-black overflow-y-auto overflow-hidden`}>
+                    <div className={`w-full md:w-10/12 px-4 md:ml-[15%] md:mt-5 md:px-10 text-black overflow-y-auto`}>
                         {
                             selectedLanguage === "html" ?
                                 <>
@@ -204,7 +213,7 @@ class Home extends React.Component {
                                                         <iframe
                                                             src="https://www.youtube.com/embed/NLEHISMioQw?si=zW4VrRx7Rd4ju2s-"
                                                             title="How to install Sublime Text?"
-                                                            className={`w-full md:w-10/12 min-h-[40vh]`}
+                                                            className={`w-full md:w-10/12  min-h-[40vh] md:min-h-[60vh]`}
                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                             referrerPolicy="strict-origin-when-cross-origin"
                                                             allowFullScreen></iframe>
@@ -215,7 +224,7 @@ class Home extends React.Component {
                                                             <iframe
                                                                 src="https://www.youtube.com/embed/1AqvGotyxWI?si=MrxHucop7hO9WCAT"
                                                                 title="How to use Sublime Text for HTML file?"
-                                                                className={`w-full md:w-10/12 min-h-[40vh]`}
+                                                                className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh]`}
                                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                                 referrerPolicy="strict-origin-when-cross-origin"
                                                                 allowFullScreen></iframe>
@@ -226,7 +235,7 @@ class Home extends React.Component {
                                                                 <iframe
                                                                     src="https://www.youtube.com/embed/5C6EawooflQ?si=pOTS76STe3TsE9rm"
                                                                     title="Header"
-                                                                    className={`w-full md:w-10/12 min-h-[40vh]`}
+                                                                    className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
                                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                                     referrerPolicy="strict-origin-when-cross-origin"
                                                                     allowFullScreen></iframe>
@@ -256,7 +265,33 @@ class Home extends React.Component {
                                                                 </div>
                                                             </div>
                                                             :
-                                                            <div className={`text-center`}>Coming Soon...</div>
+                                                            selectedMenuTitle === "HTML Formatting" ?
+                                                                <div>
+                                                                    <div>{"<a> - link tab"}</div>
+                                                                    <h3>Formatting elements were designed to display
+                                                                        special types of text:</h3>
+                                                                    <ul className={`mb-4 list-item ml-5`} type={"square"}>
+                                                                        <li>{"<b> - Bold text"}</li>
+                                                                        <li>{"<strong> - Important text"}</li>
+                                                                        <li>{"<i> - Italic text"}</li>
+                                                                        <li>{"<em> - Emphasized text"}</li>
+                                                                        <li>{"<mark> - Marked text"}</li>
+                                                                        <li>{"<small> - Smaller text"}</li>
+                                                                        <li>{"<del> - Deleted text"}</li>
+                                                                        <li>{"<ins> - Inserted text"}</li>
+                                                                        <li>{"<sub> - Subscript text"}</li>
+                                                                        <li>{"<sup> - Superscript text"}</li>
+                                                                    </ul>
+                                                                    <iframe
+                                                                        src="https://www.youtube.com/embed/yQceOLPxojA?si=rHGd_0Q28X2y59TG"
+                                                                        title="Formatting Elements"
+                                                                        className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
+                                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                        referrerPolicy="strict-origin-when-cross-origin"
+                                                                        allowFullScreen></iframe>
+                                                                </div>
+                                                                :
+                                                                <div className={`text-center`}>Coming Soon...</div>
                                         }
                                     </>
                                 </>
