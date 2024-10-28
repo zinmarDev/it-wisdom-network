@@ -17,6 +17,16 @@ const codeStringArrayForHTML = [
     "\t<h5>Heading for h5</h5>\n" +
     "\t<h6>Heading for h6</h6>\n" +
     "</body>\n" +
+    "</html>",
+    "<!DOCTYPE html>\n" +
+    "<html>\n" +
+    "\t<head>\n" +
+    "\t\t<title>Page Title</title>\n" +
+    "\t</head>\n" +
+    "\t<body>\n" +
+    "\t\t<h1>My First Heading</h1>\n" +
+    "\t\t<p>My first paragraph.</p>\n" +
+    "\t</body>\n" +
     "</html>"
 ]
 
@@ -200,16 +210,69 @@ class Home extends React.Component {
                             selectedLanguage === "html" ?
                                 <>
                                     <div
-                                        className={`text-xl md:text-2xl font-semibold mb-4`}>{selectedMenuTitle}</div>
+                                        className={`text-2xl md:text-4xl font-semibold mb-4`}>{selectedMenuTitle}</div>
                                     <>
                                         {
                                             selectedMenuTitle === "Introduction" ?
                                                 <div>
-                                                    <div>Stand for : Hyper Text Market Language</div>
+                                                    <div className={`text-lg font-bold mb-4`}>အရှည်ကောက်ကို
+                                                        <span className={`text-primary`}> Hyper Text Market Language</span> လို့ခေါ်တယ်
+                                                    </div>
+                                                    <iframe
+                                                        src="https://www.youtube.com/embed/NLEHISMioQw?si=zW4VrRx7Rd4ju2s-"
+                                                        title="How to install Sublime Text?"
+                                                        className={`w-full md:w-10/12  min-h-[40vh] md:min-h-[60vh]`}
+                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                        referrerPolicy="strict-origin-when-cross-origin"
+                                                        allowFullScreen></iframe>
+                                                    <div className={`my-4`}>
+                                                        <div className={`font-bold mb-4 text-xl`}>Sample HTML Document
+                                                        </div>
+                                                        <div
+                                                            className={`border-2 border-gray-300 rounded-md`}>
+                                                            <div
+                                                                className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
+                                                                <div>HTML</div>
+                                                                <div
+                                                                    className={`hover:bg-gray-100 font-medium cursor-pointer px-2`}
+                                                                    onClick={() => this.handleCopyCode(codeStringArrayForHTML[1])}>Copy
+                                                                </div>
+                                                            </div>
+                                                            <div className={`p-4`}>
+                                                                {this.handleCodeDisplay(codeStringArrayForHTML[1])}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div className={`mb-4`}>
+                                                        <div
+                                                            className={`mb-2 font-bold text-xl text-primary`}>Explanation
+                                                        </div>
+                                                        <ul className={`list-item font-medium list-disc mx-5 md:mx-10`}>
+                                                            <li>{"<!DOCTYPE html> declaration defines that this document is an HTML5 document"}</li>
+                                                            <li>{"<html> element is the root element of an HTML page"}</li>
+                                                            <li>{"<head> element contains meta information"}</li>
+                                                            <li>{"<title> element specifies a title on the browser's title bar for the HTML page"}</li>
+                                                            <li>{"<body> element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc. "}</li>
+                                                            <li>{"<h1> element defines a large heading"}</li>
+                                                            <li>{"<p> element defines a paragraphs"}</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div className={`my-4`}>
+                                                        <div className={`font-bold text-xl`}>HTML Element ဆိုတာ ဘာလဲ?
+                                                        </div>
+                                                        <p className={`my-2`}>
+                                                            An HTML element is defined by a start tag, some content, and
+                                                            an end tag:
+                                                            <div
+                                                                className={`font-semibold text-primary`}>{"<tagname> Content goes here... </tagname>"}</div>
+                                                        </p>
+                                                    </div>
                                                 </div>
                                                 :
                                                 selectedMenuTitle === "Installation" ?
                                                     <div>
+                                                        <div className={`text-xl font-bold mb-4`}>Using Sublime Text
+                                                        </div>
                                                         <iframe
                                                             src="https://www.youtube.com/embed/NLEHISMioQw?si=zW4VrRx7Rd4ju2s-"
                                                             title="How to install Sublime Text?"
@@ -217,6 +280,14 @@ class Home extends React.Component {
                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                             referrerPolicy="strict-origin-when-cross-origin"
                                                             allowFullScreen></iframe>
+                                                        <div className={`my-10`}>
+                                                            <div>
+                                                                <span className={`font-bold text-xl`}>Download Link - </span>
+                                                                <a href={"https://www.sublimetext.com/"}
+                                                                   target={"_blank"}
+                                                                   className={`text-lg text-blue-500 font-semibold`}>sublimetext.com</a>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     :
                                                     selectedMenuTitle === "Guide to File Creation" ?
@@ -249,7 +320,7 @@ class Home extends React.Component {
                                                                             className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
                                                                             <div>HTML</div>
                                                                             <div
-                                                                                className={`hover:bg-gray-100 font-medium cursor-pointer`}
+                                                                                className={`hover:bg-gray-100 font-medium cursor-pointer px-2`}
                                                                                 onClick={() => this.handleCopyCode(codeStringArrayForHTML[0])}>Copy
                                                                             </div>
                                                                         </div>
@@ -257,7 +328,6 @@ class Home extends React.Component {
                                                                             {this.handleCodeDisplay(codeStringArrayForHTML[0])}
                                                                         </div>
                                                                     </div>
-
                                                                     <h3 className={`my-4 font-bold`}>Result :</h3>
                                                                     <div className={`border-2 border-gray-300 rounded-md`}>
                                                                         <img src={ImgResult1}/>
