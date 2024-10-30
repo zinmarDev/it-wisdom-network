@@ -2,6 +2,11 @@ import React from "react";
 import logo from "../assets/ItNetworkLogo.jpg"
 import {FaAngleDoubleLeft, FaAngleDoubleRight} from "react-icons/fa";
 import ImgResult1 from "../assets/1.png";
+import ImgResult2 from "../assets/2.png";
+import ImgResult3 from "../assets/3.png";
+import ImgResult4 from "../assets/4.png";
+import ImgResult5 from "../assets/5.png";
+import ImgResult6 from "../assets/6.png";
 
 const codeStringArrayForHTML = [
     "<!DOCTYPE html>\n" +
@@ -27,6 +32,98 @@ const codeStringArrayForHTML = [
     "\t\t<h1>My First Heading</h1>\n" +
     "\t\t<p>My first paragraph.</p>\n" +
     "\t</body>\n" +
+    "</html>",
+    "<!DOCTYPE html>\n" +
+    "<html>\n" +
+    "<head>\n" +
+    "\t<title>HTML Paragraphs</title>\n" +
+    "</head>\n" +
+    "<body>\n" +
+    "\t<p>This is first paragraph.</p>\n" +
+    "\t<p>This is second paragraph</p>\n" +
+    "</body>\n" +
+    "</html>",
+    "<!DOCTYPE html>\n" +
+    "<html>\n" +
+    "<head>\n" +
+    "\t<title>HTML Paragraphs</title>\n" +
+    "</head>\n" +
+    "<body>\n" +
+    "\t<p>This is first paragraph.</p>\n" +
+    "\t<hr>\n" +
+    "\t<p>This is second paragraph</p>\n" +
+    "</body>\n" +
+    "</html>",
+    "<!DOCTYPE html>\n" +
+    "<html>\n" +
+    "<head>\n" +
+    "\t<title>HTML Paragraphs</title>\n" +
+    "</head>\n" +
+    "<body>\n" +
+    "\t<p>\n" +
+    "\t  My Bonnie lies over the ocean.\n" +
+    "\n" +
+    "\t  My Bonnie lies over the sea.\n" +
+    "\n" +
+    "\t  My Bonnie lies over the ocean.\n" +
+    "\n" +
+    "\t  Oh, bring back my Bonnie to me.\n" +
+    "\t</p>\n" +
+    "\t<hr>\n" +
+    "\t<pre>\n" +
+    "\t  My Bonnie lies over the ocean.\n" +
+    "\n" +
+    "\t  My Bonnie lies over the sea.\n" +
+    "\n" +
+    "\t  My Bonnie lies over the ocean.\n" +
+    "\n" +
+    "\t  Oh, bring back my Bonnie to me.\n" +
+    "\t</pre>\n" +
+    "</body>\n" +
+    "</html>",
+    "<!DOCTYPE html>\n" +
+    "<html>\n" +
+    "<head>\n" +
+    "\t<title>HTML Paragraphs</title>\n" +
+    "</head>\n" +
+    "<body>\n" +
+    "\t<p>\n" +
+    "\t  My Bonnie lies over the ocean.\n" +
+    "\t  <br>\n" +
+    "\t  My Bonnie lies over the sea.\n" +
+    "\t  <br>\n" +
+    "\t  My Bonnie lies over the ocean.\n" +
+    "\t  <br>\n" +
+    "\t  Oh, bring back my Bonnie to me.\n" +
+    "\t</p>\n" +
+    "</body>\n" +
+    "</html>",
+    "<!DOCTYPE html>\n" +
+    "<html>\n" +
+    "<head>\n" +
+    "\t<title>HTML Formatting</title>\n" +
+    "</head>\n" +
+    "<body>\n" +
+    "\t<b>This is Bold text.</b>\n" +
+    "\t<br>\n" +
+    "\t<i>This is Italic text.</i>\n" +
+    "\t<br>\n" +
+    "\t<em>This is Emphasized text.</em>\n" +
+    "\t<br>\n" +
+    "\t<mark>This is markred text.</mark>\n" +
+    "\t<br>\n" +
+    "\t<small>This is Smaller text.</small>\n" +
+    "\t<br>\n" +
+    "\t<del>This is Deleted text.</del>\n" +
+    "\t<br>\n" +
+    "\t<ins>This is Inserted text.</ins>\n" +
+    "\t<br>\n" +
+    "\t<strong>This is strong text.</strong>\n" +
+    "\t<br>\n" +
+    "\t<sub>This is Subscript text.</sub>\n" +
+    "\t<br>\n" +
+    "\t<sup>This is Subscript text.</sup>\n" +
+    "</body>\n" +
     "</html>"
 ]
 
@@ -56,6 +153,11 @@ class Home extends React.Component {
                     {
                         label: "HTML Heading",
                         value: "heading",
+                        selected: false,
+                    },
+                    {
+                        label: "HTML Paragraphs",
+                        value: "paragraph",
                         selected: false,
                     },
                     {
@@ -197,7 +299,7 @@ class Home extends React.Component {
                                         (language, ind) =>
                                             <div key={ind}
                                                  onClick={() => this.handleSelectedOption(language.label)}
-                                                 className={`py-3 hover:bg-activePrimary hover:text-white px-5 ${selectedMenuTitle === language.label && 'bg-activePrimary text-black font-black'}`}>
+                                                 className={`py-3 cursor-pointer hover:bg-activePrimary hover:text-white px-5 ${selectedMenuTitle === language.label && 'bg-activePrimary text-black font-black'}`}>
                                                 {language.label}
                                             </div>
                                     )
@@ -205,7 +307,7 @@ class Home extends React.Component {
                             }
                         </div>
                     </div>
-                    <div className={`w-full md:w-10/12 px-4 md:ml-[15%] md:mt-5 md:px-10 text-black overflow-y-auto`}>
+                    <div className={`w-full md:w-10/12 px-4 md:ml-[15%] md:mt-5 md:px-10 text-base md:text-lg text-black overflow-y-auto`}>
                         {
                             selectedLanguage === "html" ?
                                 <>
@@ -215,8 +317,8 @@ class Home extends React.Component {
                                         {
                                             selectedMenuTitle === "Introduction" ?
                                                 <div>
-                                                    <div className={`text-lg font-bold mb-4`}>အရှည်ကောက်ကို
-                                                        <span className={`text-primary`}> Hyper Text Market Language</span> လို့ခေါ်တယ်
+                                                    <div className={`text-lg font-bold mb-4`}>Stand For:
+                                                        <span className={`text-primary`}> Hyper Text Market Language</span>
                                                     </div>
                                                     <iframe
                                                         src="https://www.youtube.com/embed/NLEHISMioQw?si=zW4VrRx7Rd4ju2s-"
@@ -243,7 +345,7 @@ class Home extends React.Component {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div className={`mb-4`}>
+                                                    <div className={`my-4`}>
                                                         <div
                                                             className={`mb-2 font-bold text-xl text-primary`}>Explanation
                                                         </div>
@@ -258,7 +360,7 @@ class Home extends React.Component {
                                                         </ul>
                                                     </div>
                                                     <div className={`my-4`}>
-                                                        <div className={`font-bold text-xl`}>HTML Element ဆိုတာ ဘာလဲ?
+                                                        <div className={`font-bold text-xl`}>What is HTML Element?
                                                         </div>
                                                         <p className={`my-2`}>
                                                             An HTML element is defined by a start tag, some content, and
@@ -271,7 +373,19 @@ class Home extends React.Component {
                                                 :
                                                 selectedMenuTitle === "Installation" ?
                                                     <div>
-                                                        <div className={`text-xl font-bold mb-4`}>Using Sublime Text
+                                                        <div className={`mb-10`}>
+                                                            <div className={`text-xl font-bold mb-4`}>* Using Notepad
+                                                            </div>
+                                                            <iframe
+                                                                src="https://www.youtube.com/embed/NLEHISMioQw?si=zW4VrRx7Rd4ju2s-"
+                                                                title="How to install Sublime Text?"
+                                                                className={`w-full md:w-10/12  min-h-[40vh] md:min-h-[60vh]`}
+                                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                referrerPolicy="strict-origin-when-cross-origin"
+                                                                allowFullScreen></iframe>
+                                                        </div>
+
+                                                        <div className={`text-xl font-bold mb-4`}>* Using Sublime Text
                                                         </div>
                                                         <iframe
                                                             src="https://www.youtube.com/embed/NLEHISMioQw?si=zW4VrRx7Rd4ju2s-"
@@ -282,7 +396,8 @@ class Home extends React.Component {
                                                             allowFullScreen></iframe>
                                                         <div className={`my-10`}>
                                                             <div>
-                                                                <span className={`font-bold text-xl`}>Download Link - </span>
+                                                                <span
+                                                                    className={`font-bold text-xl`}>Download Link - </span>
                                                                 <a href={"https://www.sublimetext.com/"}
                                                                    target={"_blank"}
                                                                    className={`text-lg text-blue-500 font-semibold`}>sublimetext.com</a>
@@ -335,33 +450,203 @@ class Home extends React.Component {
                                                                 </div>
                                                             </div>
                                                             :
-                                                            selectedMenuTitle === "HTML Formatting" ?
+                                                            selectedMenuTitle === "HTML Paragraphs" ?
                                                                 <div>
-                                                                    <div>{"<a> - link tab"}</div>
-                                                                    <h3>Formatting elements were designed to display
-                                                                        special types of text:</h3>
-                                                                    <ul className={`mb-4 list-item ml-5`} type={"square"}>
-                                                                        <li>{"<b> - Bold text"}</li>
-                                                                        <li>{"<strong> - Important text"}</li>
-                                                                        <li>{"<i> - Italic text"}</li>
-                                                                        <li>{"<em> - Emphasized text"}</li>
-                                                                        <li>{"<mark> - Marked text"}</li>
-                                                                        <li>{"<small> - Smaller text"}</li>
-                                                                        <li>{"<del> - Deleted text"}</li>
-                                                                        <li>{"<ins> - Inserted text"}</li>
-                                                                        <li>{"<sub> - Subscript text"}</li>
-                                                                        <li>{"<sup> - Superscript text"}</li>
-                                                                    </ul>
-                                                                    <iframe
-                                                                        src="https://www.youtube.com/embed/yQceOLPxojA?si=rHGd_0Q28X2y59TG"
-                                                                        title="Formatting Elements"
-                                                                        className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
-                                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                                        referrerPolicy="strict-origin-when-cross-origin"
-                                                                        allowFullScreen></iframe>
+                                                                    <div className={`font-bold text-xl mt-4 underline`}>Block level element</div>
+                                                                    <div className={`font-medium mt-2`}>{"The <p> element is a block-level element. A block-level element always starts on a new line and takes up the full width available."}</div>
+
+                                                                    <div className={`mt-4 mb-10`}>
+                                                                        <div
+                                                                            className={`mb-4 text-xl font-bold text-primary`}>{"*Using HTML Paragraph <p>....</p> "}</div>
+                                                                        <iframe
+                                                                            src="https://www.youtube.com/embed/5C6EawooflQ?si=pOTS76STe3TsE9rm"
+                                                                            title="Header"
+                                                                            className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
+                                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                            referrerPolicy="strict-origin-when-cross-origin"
+                                                                            allowFullScreen></iframe>
+                                                                        <div className={`my-4 font-bold text-lg`}>HTML
+                                                                            Code
+                                                                            Example
+                                                                        </div>
+                                                                        <div
+                                                                            className={`border-2 border-gray-300 rounded-md`}>
+                                                                            <div
+                                                                                className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
+                                                                                <div>HTML</div>
+                                                                                <div
+                                                                                    className={`hover:bg-gray-100 font-medium cursor-pointer px-2`}
+                                                                                    onClick={() => this.handleCopyCode(codeStringArrayForHTML[2])}>Copy
+                                                                                </div>
+                                                                            </div>
+                                                                            <div className={`p-4`}>
+                                                                                {this.handleCodeDisplay(codeStringArrayForHTML[2])}
+                                                                            </div>
+                                                                        </div>
+                                                                        <h3 className={`my-4 font-bold`}>Result :</h3>
+                                                                        <div
+                                                                            className={`border-2 border-gray-300 rounded-md`}>
+                                                                            <img src={ImgResult2}/>
+                                                                        </div>
+                                                                        <hr className={`my-7`}/>
+                                                                        <div
+                                                                            className={`mb-4 text-xl font-bold text-primary`}>{"*Using HTML Horizontal Rules <hr> "}</div>
+                                                                        <iframe
+                                                                            src="https://www.youtube.com/embed/5C6EawooflQ?si=pOTS76STe3TsE9rm"
+                                                                            title="Header"
+                                                                            className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
+                                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                            referrerPolicy="strict-origin-when-cross-origin"
+                                                                            allowFullScreen></iframe>
+                                                                        <div className={`my-4 font-bold text-lg`}>HTML
+                                                                            Code
+                                                                            Example
+                                                                        </div>
+                                                                        <div
+                                                                            className={`border-2 border-gray-300 rounded-md`}>
+                                                                            <div
+                                                                                className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
+                                                                                <div>HTML</div>
+                                                                                <div
+                                                                                    className={`hover:bg-gray-100 font-medium cursor-pointer px-2`}
+                                                                                    onClick={() => this.handleCopyCode(codeStringArrayForHTML[3])}>Copy
+                                                                                </div>
+                                                                            </div>
+                                                                            <div className={`p-4`}>
+                                                                                {this.handleCodeDisplay(codeStringArrayForHTML[3])}
+                                                                            </div>
+                                                                        </div>
+                                                                        <h3 className={`my-4 font-bold`}>Result :</h3>
+                                                                        <div
+                                                                            className={`border-2 border-gray-300 rounded-md`}>
+                                                                            <img src={ImgResult3}/>
+                                                                        </div>
+                                                                        <hr className={`my-7`}/>
+                                                                        <div
+                                                                            className={`mb-4 text-xl font-bold text-primary mt-4`}>{"*Using The HTML <pre> Element "}</div>
+                                                                        <iframe
+                                                                            src="https://www.youtube.com/embed/5C6EawooflQ?si=pOTS76STe3TsE9rm"
+                                                                            title="Header"
+                                                                            className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
+                                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                            referrerPolicy="strict-origin-when-cross-origin"
+                                                                            allowFullScreen></iframe>
+                                                                        <div className={`my-4 font-bold text-lg`}>HTML
+                                                                            Code
+                                                                            Example
+                                                                        </div>
+                                                                        <div
+                                                                            className={`border-2 border-gray-300 rounded-md`}>
+                                                                            <div
+                                                                                className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
+                                                                                <div>HTML</div>
+                                                                                <div
+                                                                                    className={`hover:bg-gray-100 font-medium cursor-pointer px-2`}
+                                                                                    onClick={() => this.handleCopyCode(codeStringArrayForHTML[4])}>Copy
+                                                                                </div>
+                                                                            </div>
+                                                                            <div className={`p-4`}>
+                                                                                {this.handleCodeDisplay(codeStringArrayForHTML[4])}
+                                                                            </div>
+                                                                        </div>
+                                                                        <h3 className={`my-4 font-bold`}>Result :</h3>
+                                                                        <div
+                                                                            className={`border-2 border-gray-300 rounded-md`}>
+                                                                            <img src={ImgResult4}/>
+                                                                        </div>
+                                                                        <hr className={`my-7`}/>
+                                                                        <div
+                                                                            className={`mb-4 text-xl font-bold text-primary mt-4`}>{"*Using HTML Line Breaks <br> "}</div>
+                                                                        <iframe
+                                                                            src="https://www.youtube.com/embed/5C6EawooflQ?si=pOTS76STe3TsE9rm"
+                                                                            title="Header"
+                                                                            className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
+                                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                            referrerPolicy="strict-origin-when-cross-origin"
+                                                                            allowFullScreen></iframe>
+                                                                        <div className={`my-4 font-bold text-lg`}>HTML
+                                                                            Code
+                                                                            Example
+                                                                        </div>
+                                                                        <div
+                                                                            className={`border-2 border-gray-300 rounded-md`}>
+                                                                            <div
+                                                                                className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
+                                                                                <div>HTML</div>
+                                                                                <div
+                                                                                    className={`hover:bg-gray-100 font-medium cursor-pointer px-2`}
+                                                                                    onClick={() => this.handleCopyCode(codeStringArrayForHTML[5])}>Copy
+                                                                                </div>
+                                                                            </div>
+                                                                            <div className={`p-4`}>
+                                                                                {this.handleCodeDisplay(codeStringArrayForHTML[5])}
+                                                                            </div>
+                                                                        </div>
+                                                                        <h3 className={`my-4 font-bold`}>Result :</h3>
+                                                                        <div
+                                                                            className={`border-2 border-gray-300 rounded-md`}>
+                                                                            <img src={ImgResult5}/>
+                                                                        </div>
+                                                                    </div>
                                                                 </div>
                                                                 :
-                                                                <div className={`text-center`}>Coming Soon...</div>
+                                                                selectedMenuTitle === "HTML Formatting" ?
+                                                                    <div className={`mb-10`}>
+                                                                        <div className={`text-xl mb-4`}>Formatting
+                                                                            elements were designed to display
+                                                                            special types of text:
+                                                                        </div>
+                                                                        <iframe
+                                                                            src="https://www.youtube.com/embed/yQceOLPxojA?si=rHGd_0Q28X2y59TG"
+                                                                            title="Formatting Elements"
+                                                                            className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
+                                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                            referrerPolicy="strict-origin-when-cross-origin"
+                                                                            allowFullScreen></iframe>
+
+                                                                        <div
+                                                                            className={`text-primary font-bold text-xl my-4`}>Explanation
+                                                                        </div>
+                                                                        <div className={`mb-4 ml-5 grid grid-cols-2`}
+                                                                             type={"square"}>
+                                                                            <li>{"<b> - Bold text"}</li>
+                                                                            <li>{"<strong> - Important text"}</li>
+                                                                            <li>{"<i> - Italic text"}</li>
+                                                                            <li>{"<em> - Emphasized text"}</li>
+                                                                            <li>{"<mark> - Marked text"}</li>
+                                                                            <li>{"<small> - Smaller text"}</li>
+                                                                            <li>{"<del> - Deleted text"}</li>
+                                                                            <li>{"<ins> - Inserted text"}</li>
+                                                                            <li>{"<sub> - Subscript text"}</li>
+                                                                            <li>{"<sup> - Superscript text"}</li>
+                                                                        </div>
+                                                                        <hr className={`my-7 `}/>
+                                                                        <div className={`my-4 font-bold text-lg`}>HTML
+                                                                            Code
+                                                                            Example
+                                                                        </div>
+                                                                        <div
+                                                                            className={`border-2 border-gray-300 rounded-md`}>
+                                                                            <div
+                                                                                className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
+                                                                                <div>HTML</div>
+                                                                                <div
+                                                                                    className={`hover:bg-gray-100 font-medium cursor-pointer px-2`}
+                                                                                    onClick={() => this.handleCopyCode(codeStringArrayForHTML[6])}>Copy
+                                                                                </div>
+                                                                            </div>
+                                                                            <div className={`p-4`}>
+                                                                                {this.handleCodeDisplay(codeStringArrayForHTML[6])}
+                                                                            </div>
+                                                                        </div>
+                                                                        <h3 className={`my-4 font-bold`}>Result :</h3>
+                                                                        <div
+                                                                            className={`border-2 border-gray-300 rounded-md`}>
+                                                                            <img src={ImgResult6}/>
+                                                                        </div>
+                                                                    </div>
+                                                                    :
+                                                                    <div className={`text-center`}>Coming Soon...</div>
                                         }
                                     </>
                                 </>
