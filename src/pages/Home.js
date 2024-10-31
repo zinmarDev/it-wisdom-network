@@ -7,6 +7,8 @@ import ImgResult3 from "../assets/3.png";
 import ImgResult4 from "../assets/4.png";
 import ImgResult5 from "../assets/5.png";
 import ImgResult6 from "../assets/6.png";
+import usingNotepad from "../assets/notepad.png"
+import usingNotepad2 from "../assets/usingNotepad2.png"
 
 const codeStringArrayForHTML = [
     "<!DOCTYPE html>\n" +
@@ -312,26 +314,43 @@ class Home extends React.Component {
                             selectedLanguage === "html" ?
                                 <>
                                     <div
-                                        className={`text-2xl md:text-4xl font-semibold mb-4`}>{selectedMenuTitle}</div>
+                                        className={`text-2xl md:text-4xl font-semibold mb-10`}>{selectedMenuTitle}</div>
                                     <>
                                         {
                                             selectedMenuTitle === "Introduction" ?
                                                 <div>
-                                                    <div className={`text-lg font-bold mb-4`}>Stand For:
-                                                        <span className={`text-primary`}> Hyper Text Market Language</span>
+                                                    <div className={`text-lg font-bold mb-10`}>Stand For:
+                                                        <span
+                                                            className={`text-primary`}> Hyper Text Market Language</span>
                                                     </div>
                                                     <iframe
-                                                        src="https://www.youtube.com/embed/NLEHISMioQw?si=zW4VrRx7Rd4ju2s-"
-                                                        title="How to install Sublime Text?"
+                                                        src="https://www.youtube.com/embed/xQ4Bb3FutmU?si=dYDuHFF8Dv18FKzJ&rel=0&autoplay=1"
+                                                        title="HTML Introduction"
                                                         className={`w-full md:w-10/12  min-h-[40vh] md:min-h-[60vh]`}
-                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                         referrerPolicy="strict-origin-when-cross-origin"
                                                         allowFullScreen></iframe>
-                                                    <div className={`my-4`}>
-                                                        <div className={`font-bold mb-4 text-xl`}>Sample HTML Document
+                                                    <div className={`my-10`}>
+                                                        <div className={`font-bold text-xl`}>What is HTML Element?
                                                         </div>
+                                                        <p className={`my-2`}>
+                                                            An HTML element is defined by a start tag, some content, and
+                                                            an end tag:
+                                                            <div
+                                                                className={`font-semibold text-primary`}>{"<tagname> Content goes here... </tagname>"}</div>
+                                                        </p>
+                                                    </div>
+                                                    <hr className={`my-7`}/>
+                                                    <div className={`my-10`}>
+                                                        <div className={`font-bold mb-10 text-xl`}>Sample HTML Document
+                                                        </div>
+                                                        <iframe
+                                                            src="https://www.youtube.com/embed/VnrAEFZgU5M?si=mO8LK8_6TY_rOe5Z&rel=0"
+                                                            title="HTML Coding"
+                                                            className={`w-full md:w-10/12  min-h-[40vh] md:min-h-[60vh]`}
+                                                            referrerPolicy="strict-origin-when-cross-origin"
+                                                            allowFullScreen></iframe>
                                                         <div
-                                                            className={`border-2 border-gray-300 rounded-md`}>
+                                                            className={`border-2 border-gray-300 rounded-md mt-10`}>
                                                             <div
                                                                 className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
                                                                 <div>HTML</div>
@@ -345,7 +364,7 @@ class Home extends React.Component {
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div className={`my-4`}>
+                                                    <div className={`my-10`}>
                                                         <div
                                                             className={`mb-2 font-bold text-xl text-primary`}>Explanation
                                                         </div>
@@ -359,36 +378,30 @@ class Home extends React.Component {
                                                             <li>{"<p> element defines a paragraphs"}</li>
                                                         </ul>
                                                     </div>
-                                                    <div className={`my-4`}>
-                                                        <div className={`font-bold text-xl`}>What is HTML Element?
-                                                        </div>
-                                                        <p className={`my-2`}>
-                                                            An HTML element is defined by a start tag, some content, and
-                                                            an end tag:
-                                                            <div
-                                                                className={`font-semibold text-primary`}>{"<tagname> Content goes here... </tagname>"}</div>
-                                                        </p>
-                                                    </div>
                                                 </div>
                                                 :
                                                 selectedMenuTitle === "Installation" ?
                                                     <div>
                                                         <div className={`mb-10`}>
-                                                            <div className={`text-xl font-bold mb-4`}>* Using Notepad
-                                                            </div>
                                                             <iframe
-                                                                src="https://www.youtube.com/embed/NLEHISMioQw?si=zW4VrRx7Rd4ju2s-"
+                                                                src="https://www.youtube.com/embed/hmDx6UjX2a0?si=-Yo92u77-vYp-3Zl&rel=0&autoplay=1"
                                                                 title="How to install Sublime Text?"
                                                                 className={`w-full md:w-10/12  min-h-[40vh] md:min-h-[60vh]`}
                                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                                 referrerPolicy="strict-origin-when-cross-origin"
                                                                 allowFullScreen></iframe>
+                                                            <div className={`text-xl font-bold my-10`}>* Using Notepad
+                                                            </div>
+                                                            <div className={`flex justify-between gap-4`}>
+                                                                <img src={usingNotepad} className={`w-full md:w-1/2`}/>
+                                                                <img src={usingNotepad2} className={`w-full md:w-1/2`}/>
+                                                            </div>
                                                         </div>
 
-                                                        <div className={`text-xl font-bold mb-4`}>* Using Sublime Text
+                                                        <div className={`text-xl font-bold mb-10`}>* Using Sublime Text
                                                         </div>
                                                         <iframe
-                                                            src="https://www.youtube.com/embed/NLEHISMioQw?si=zW4VrRx7Rd4ju2s-"
+                                                            src="https://www.youtube.com/embed/NLEHISMioQw?si=zW4VrRx7Rd4ju2s-&rel=0"
                                                             title="How to install Sublime Text?"
                                                             className={`w-full md:w-10/12  min-h-[40vh] md:min-h-[60vh]`}
                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -406,9 +419,21 @@ class Home extends React.Component {
                                                     </div>
                                                     :
                                                     selectedMenuTitle === "Guide to File Creation" ?
-                                                        <div>
+                                                        <div className={`mb-10`}>
+                                                            <div className={`text-xl font-bold my-10`}>* Using Notepad
+                                                            </div>
                                                             <iframe
-                                                                src="https://www.youtube.com/embed/1AqvGotyxWI?si=MrxHucop7hO9WCAT"
+                                                                src="https://www.youtube.com/embed/o8wHDE5Brfs?si=qn9Ta4ml8DoSjFsN&rel=0&autoplay=1"
+                                                                title="How to use Sublime Text for HTML file?"
+                                                                className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh]`}
+                                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                referrerPolicy="strict-origin-when-cross-origin"
+                                                                allowFullScreen></iframe>
+                                                            <div className={`text-xl font-bold my-10`}>* Using Sublime
+                                                                Text
+                                                            </div>
+                                                            <iframe
+                                                                src="https://www.youtube.com/embed/1AqvGotyxWI?si=MrxHucop7hO9WCAT&rel=0"
                                                                 title="How to use Sublime Text for HTML file?"
                                                                 className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh]`}
                                                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -418,17 +443,30 @@ class Home extends React.Component {
                                                         :
                                                         selectedMenuTitle === "HTML Heading" ?
                                                             <div>
+                                                                <div className={`mb-10 text-lg font-bold`}>
+                                                                    *Using Sublime Text
+                                                                </div>
                                                                 <iframe
-                                                                    src="https://www.youtube.com/embed/5C6EawooflQ?si=pOTS76STe3TsE9rm"
+                                                                    src="https://www.youtube.com/embed/E2wMUQ0MiW4?si=VaBJpKOEHfDGWBlE&rel=0&autoplay=1"
                                                                     title="Header"
                                                                     className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
                                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                                     referrerPolicy="strict-origin-when-cross-origin"
                                                                     allowFullScreen></iframe>
-
-                                                                <div className={`my-4`}>
-                                                                    <h3 className={`my-4 font-bold`}>HTML Code
-                                                                        Example</h3>
+                                                                <div className={`my-10 text-lg font-bold`}>
+                                                                    *Using Notepad
+                                                                </div>
+                                                                <iframe
+                                                                    src="https://www.youtube.com/embed/_LR3rluz7lk?si=8H9WdP5kgqk76V8M&rel=0"
+                                                                    title="Header"
+                                                                    className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
+                                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                    referrerPolicy="strict-origin-when-cross-origin"
+                                                                    allowFullScreen></iframe>
+                                                                <div className={`my-10`}>
+                                                                    <div className={`my-10 text-lg font-bold`}>HTML Code
+                                                                        Example
+                                                                    </div>
                                                                     <div
                                                                         className={`border-2 border-gray-300 rounded-md`}>
                                                                         <div
@@ -443,8 +481,9 @@ class Home extends React.Component {
                                                                             {this.handleCodeDisplay(codeStringArrayForHTML[0])}
                                                                         </div>
                                                                     </div>
-                                                                    <h3 className={`my-4 font-bold`}>Result :</h3>
-                                                                    <div className={`border-2 border-gray-300 rounded-md`}>
+                                                                    <h3 className={`my-10 font-bold`}>Result :</h3>
+                                                                    <div
+                                                                        className={`border-2 border-gray-300 rounded-md`}>
                                                                         <img src={ImgResult1}/>
                                                                     </div>
                                                                 </div>
@@ -452,20 +491,25 @@ class Home extends React.Component {
                                                             :
                                                             selectedMenuTitle === "HTML Paragraphs" ?
                                                                 <div>
-                                                                    <div className={`font-bold text-xl mt-4 underline`}>Block level element</div>
-                                                                    <div className={`font-medium mt-2`}>{"The <p> element is a block-level element. A block-level element always starts on a new line and takes up the full width available."}</div>
+                                                                    <div
+                                                                        className={`font-bold text-xl mt-10 underline`}>Block
+                                                                        level element
+                                                                    </div>
+                                                                    <div
+                                                                        className={`font-medium mt-2`}>{"The <p> element is a block-level element. A block-level element always starts on a new line and takes up the full width available."}</div>
 
-                                                                    <div className={`mt-4 mb-10`}>
-                                                                        <div
-                                                                            className={`mb-4 text-xl font-bold text-primary`}>{"*Using HTML Paragraph <p>....</p> "}</div>
+                                                                    <div className={`mt-10 mb-10`}>
                                                                         <iframe
-                                                                            src="https://www.youtube.com/embed/5C6EawooflQ?si=pOTS76STe3TsE9rm"
+                                                                            src="https://www.youtube.com/embed/9b2GeC3RzMc?si=b2t4kf9HWnX7HVK1&rel=0&autoplay=1"
                                                                             title="Header"
                                                                             className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
                                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                                                             referrerPolicy="strict-origin-when-cross-origin"
                                                                             allowFullScreen></iframe>
-                                                                        <div className={`my-4 font-bold text-lg`}>HTML
+                                                                        <div
+                                                                            className={`mt-10 text-xl font-bold text-primary`}>{"*Using HTML Paragraph <p>....</p> "}</div>
+
+                                                                        <div className={`my-10 font-bold text-lg`}>HTML
                                                                             Code
                                                                             Example
                                                                         </div>
@@ -483,22 +527,15 @@ class Home extends React.Component {
                                                                                 {this.handleCodeDisplay(codeStringArrayForHTML[2])}
                                                                             </div>
                                                                         </div>
-                                                                        <h3 className={`my-4 font-bold`}>Result :</h3>
+                                                                        <h3 className={`my-10 font-bold`}>Result :</h3>
                                                                         <div
                                                                             className={`border-2 border-gray-300 rounded-md`}>
                                                                             <img src={ImgResult2}/>
                                                                         </div>
                                                                         <hr className={`my-7`}/>
                                                                         <div
-                                                                            className={`mb-4 text-xl font-bold text-primary`}>{"*Using HTML Horizontal Rules <hr> "}</div>
-                                                                        <iframe
-                                                                            src="https://www.youtube.com/embed/5C6EawooflQ?si=pOTS76STe3TsE9rm"
-                                                                            title="Header"
-                                                                            className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
-                                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                                            referrerPolicy="strict-origin-when-cross-origin"
-                                                                            allowFullScreen></iframe>
-                                                                        <div className={`my-4 font-bold text-lg`}>HTML
+                                                                            className={`text-xl font-bold text-primary`}>{"*Using HTML Horizontal Rules <hr> "}</div>
+                                                                        <div className={`my-10 font-bold text-lg`}>HTML
                                                                             Code
                                                                             Example
                                                                         </div>
@@ -516,22 +553,16 @@ class Home extends React.Component {
                                                                                 {this.handleCodeDisplay(codeStringArrayForHTML[3])}
                                                                             </div>
                                                                         </div>
-                                                                        <h3 className={`my-4 font-bold`}>Result :</h3>
+                                                                        <h3 className={`my-10 font-bold`}>Result :</h3>
                                                                         <div
                                                                             className={`border-2 border-gray-300 rounded-md`}>
                                                                             <img src={ImgResult3}/>
                                                                         </div>
                                                                         <hr className={`my-7`}/>
                                                                         <div
-                                                                            className={`mb-4 text-xl font-bold text-primary mt-4`}>{"*Using The HTML <pre> Element "}</div>
-                                                                        <iframe
-                                                                            src="https://www.youtube.com/embed/5C6EawooflQ?si=pOTS76STe3TsE9rm"
-                                                                            title="Header"
-                                                                            className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
-                                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                                            referrerPolicy="strict-origin-when-cross-origin"
-                                                                            allowFullScreen></iframe>
-                                                                        <div className={`my-4 font-bold text-lg`}>HTML
+                                                                            className={`text-xl font-bold text-primary mt-10`}>{"*Using The HTML <pre> Element "}</div>
+
+                                                                        <div className={`my-10 font-bold text-lg`}>HTML
                                                                             Code
                                                                             Example
                                                                         </div>
@@ -549,22 +580,16 @@ class Home extends React.Component {
                                                                                 {this.handleCodeDisplay(codeStringArrayForHTML[4])}
                                                                             </div>
                                                                         </div>
-                                                                        <h3 className={`my-4 font-bold`}>Result :</h3>
+                                                                        <h3 className={`my-10 font-bold`}>Result :</h3>
                                                                         <div
                                                                             className={`border-2 border-gray-300 rounded-md`}>
                                                                             <img src={ImgResult4}/>
                                                                         </div>
                                                                         <hr className={`my-7`}/>
                                                                         <div
-                                                                            className={`mb-4 text-xl font-bold text-primary mt-4`}>{"*Using HTML Line Breaks <br> "}</div>
-                                                                        <iframe
-                                                                            src="https://www.youtube.com/embed/5C6EawooflQ?si=pOTS76STe3TsE9rm"
-                                                                            title="Header"
-                                                                            className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
-                                                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                                                            referrerPolicy="strict-origin-when-cross-origin"
-                                                                            allowFullScreen></iframe>
-                                                                        <div className={`my-4 font-bold text-lg`}>HTML
+                                                                            className={`text-xl font-bold text-primary mt-10`}>{"*Using HTML Line Breaks <br> "}</div>
+
+                                                                        <div className={`my-10 font-bold text-lg`}>HTML
                                                                             Code
                                                                             Example
                                                                         </div>
@@ -582,7 +607,7 @@ class Home extends React.Component {
                                                                                 {this.handleCodeDisplay(codeStringArrayForHTML[5])}
                                                                             </div>
                                                                         </div>
-                                                                        <h3 className={`my-4 font-bold`}>Result :</h3>
+                                                                        <h3 className={`my-10 font-bold`}>Result :</h3>
                                                                         <div
                                                                             className={`border-2 border-gray-300 rounded-md`}>
                                                                             <img src={ImgResult5}/>
@@ -592,7 +617,7 @@ class Home extends React.Component {
                                                                 :
                                                                 selectedMenuTitle === "HTML Formatting" ?
                                                                     <div className={`mb-10`}>
-                                                                        <div className={`text-xl mb-4`}>Formatting
+                                                                        <div className={`text-xl mb-10`}>Formatting
                                                                             elements were designed to display
                                                                             special types of text:
                                                                         </div>
@@ -605,9 +630,9 @@ class Home extends React.Component {
                                                                             allowFullScreen></iframe>
 
                                                                         <div
-                                                                            className={`text-primary font-bold text-xl my-4`}>Explanation
+                                                                            className={`text-primary font-bold text-xl my-10`}>Explanation
                                                                         </div>
-                                                                        <div className={`mb-4 ml-5 grid grid-cols-2`}
+                                                                        <div className={`mb-10 ml-5 grid grid-cols-2`}
                                                                              type={"square"}>
                                                                             <li>{"<b> - Bold text"}</li>
                                                                             <li>{"<strong> - Important text"}</li>
@@ -621,7 +646,7 @@ class Home extends React.Component {
                                                                             <li>{"<sup> - Superscript text"}</li>
                                                                         </div>
                                                                         <hr className={`my-7 `}/>
-                                                                        <div className={`my-4 font-bold text-lg`}>HTML
+                                                                        <div className={`my-10 font-bold text-lg`}>HTML
                                                                             Code
                                                                             Example
                                                                         </div>
@@ -639,7 +664,7 @@ class Home extends React.Component {
                                                                                 {this.handleCodeDisplay(codeStringArrayForHTML[6])}
                                                                             </div>
                                                                         </div>
-                                                                        <h3 className={`my-4 font-bold`}>Result :</h3>
+                                                                        <h3 className={`my-10 font-bold`}>Result :</h3>
                                                                         <div
                                                                             className={`border-2 border-gray-300 rounded-md`}>
                                                                             <img src={ImgResult6}/>
