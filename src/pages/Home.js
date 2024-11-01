@@ -106,25 +106,23 @@ const codeStringArrayForHTML = [
     "\t<title>HTML Formatting</title>\n" +
     "</head>\n" +
     "<body>\n" +
-    "\t<b>This is Bold text.</b>\n" +
+    "\t<b>This is bold text.</b>\n" +
     "\t<br>\n" +
     "\t<i>This is Italic text.</i>\n" +
     "\t<br>\n" +
-    "\t<em>This is Emphasized text.</em>\n" +
+    "\t<mark>This is mark text.</mark>\n" +
     "\t<br>\n" +
-    "\t<mark>This is markred text.</mark>\n" +
+    "\t<del>This is del text.</del>\n" +
     "\t<br>\n" +
-    "\t<small>This is Smaller text.</small>\n" +
-    "\t<br>\n" +
-    "\t<del>This is Deleted text.</del>\n" +
-    "\t<br>\n" +
-    "\t<ins>This is Inserted text.</ins>\n" +
+    "\t<p>This is <sub>sub</sub> text and <sup>sup</sup> text.</p>\n" +
     "\t<br>\n" +
     "\t<strong>This is strong text.</strong>\n" +
     "\t<br>\n" +
-    "\t<sub>This is Subscript text.</sub>\n" +
+    "\t<em>This is em text.</em>\n" +
     "\t<br>\n" +
-    "\t<sup>This is Subscript text.</sup>\n" +
+    "\t<small>This is small text.</small>\n" +
+    "\t<br>\n" +
+    "\t<p>I like <del>coffee</del> <ins>cake</ins>.</p>\n" +
     "</body>\n" +
     "</html>"
 ]
@@ -622,7 +620,7 @@ class Home extends React.Component {
                                                                             special types of text:
                                                                         </div>
                                                                         <iframe
-                                                                            src="https://www.youtube.com/embed/yQceOLPxojA?si=rHGd_0Q28X2y59TG"
+                                                                            src="https://www.youtube.com/embed/Z2jLugGwOgI?si=jaN5WtYpqIPHXRhR&rel=0&autoplay=1"
                                                                             title="Formatting Elements"
                                                                             className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
                                                                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
