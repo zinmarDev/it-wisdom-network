@@ -7,6 +7,7 @@ import ImgResult3 from "../assets/3.png";
 import ImgResult4 from "../assets/4.png";
 import ImgResult5 from "../assets/5.png";
 import ImgResult6 from "../assets/6.png";
+import ImgResult7 from "../assets/7.png";
 import usingNotepad from "../assets/notepad.png"
 import usingNotepad2 from "../assets/usingNotepad2.png"
 
@@ -124,6 +125,18 @@ const codeStringArrayForHTML = [
     "\t<br>\n" +
     "\t<p>I like <del>coffee</del> <ins>cake</ins>.</p>\n" +
     "</body>\n" +
+    "</html>",
+    "<!DOCTYPE html>\n" +
+    "<html>\n" +
+    "<head>\n" +
+    "\t<title>HTML Styles</title>\n" +
+    "</head>\n" +
+    "<body style=\"background-color: powderblue;\">\n" +
+    "\t<h1 style=\"color: blue; font-family: verdana;\">IT Wisdom Network</h1>\n" +
+    "\t<h2 style=\"color: green;\">IT Wisdom Network</h2>\n" +
+    "\t<p style=\"font-size: 18px;\">We are sharing IT Knowledge.</p>\n" +
+    "\t<p style=\"font-size: 18px; text-align: center;\">We are sharing IT Knowledge.</p>\n" +
+    "</body>\n" +
     "</html>"
 ]
 
@@ -158,6 +171,11 @@ class Home extends React.Component {
                     {
                         label: "HTML Paragraphs",
                         value: "paragraph",
+                        selected: false,
+                    },
+                    {
+                        label: "HTML Styles",
+                        value: "style",
                         selected: false,
                     },
                     {
@@ -669,6 +687,59 @@ class Home extends React.Component {
                                                                         </div>
                                                                     </div>
                                                                     :
+                                                                    selectedMenuTitle === "HTML Styles" ?
+                                                                        <div className={`mb-10`}>
+                                                                            <div className={`text-xl mb-5`}>
+                                                                                The HTML style attribute is used to add styles to an element, such as color, font, size, and more.
+                                                                            </div>
+                                                                            <div className={`text-xl mb-10 text-primary font-bold`}>
+                                                                                {`<tagname style=\"property:value;\">`}
+                                                                            </div>
+                                                                            <iframe
+                                                                                src="https://www.youtube.com/embed/bdhCcSXCg_8?si=kRfuK6fjQ4FX1Wzf&rel=0&autoplay=1"
+                                                                                title="Formatting Elements"
+                                                                                className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
+                                                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                                referrerPolicy="strict-origin-when-cross-origin"
+                                                                                allowFullScreen></iframe>
+
+                                                                            <div
+                                                                                className={`text-primary font-bold text-xl my-10`}>Explanation
+                                                                            </div>
+                                                                            <div className={`mb-10 ml-5 grid grid-cols-2`}
+                                                                                 type={"square"}>
+                                                                                <li>{"background-color (for background color)"}</li>
+                                                                                <li>{"color (for text color)"}</li>
+                                                                                <li>{"font-family (for text font)"}</li>
+                                                                                <li>{"font-size (for text size)"}</li>
+                                                                                <li>{"text-align (for text-align)"}</li>
+                                                                            </div>
+                                                                            <hr className={`my-7 `}/>
+                                                                            <div className={`my-10 font-bold text-lg`}>HTML
+                                                                                Code
+                                                                                Example
+                                                                            </div>
+                                                                            <div
+                                                                                className={`border-2 border-gray-300 rounded-md`}>
+                                                                                <div
+                                                                                    className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
+                                                                                    <div>HTML</div>
+                                                                                    <div
+                                                                                        className={`hover:bg-gray-100 font-medium cursor-pointer px-2`}
+                                                                                        onClick={() => this.handleCopyCode(codeStringArrayForHTML[7])}>Copy
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className={`p-4`}>
+                                                                                    {this.handleCodeDisplay(codeStringArrayForHTML[7])}
+                                                                                </div>
+                                                                            </div>
+                                                                            <h3 className={`my-10 font-bold`}>Result :</h3>
+                                                                            <div
+                                                                                className={`border-2 border-gray-300 rounded-md`}>
+                                                                                <img src={ImgResult7}/>
+                                                                            </div>
+                                                                        </div>
+                                                                        :
                                                                     <div className={`text-center`}>Coming Soon...</div>
                                         }
                                     </>
