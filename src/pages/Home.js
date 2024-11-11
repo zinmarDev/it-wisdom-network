@@ -185,7 +185,30 @@ const codeStringArrayForHTMLCSS=[
     "\t<h1>IT Wisdom Network</h1>\n" +
     "\t<p>We are sharing IT Knowledge.</p>\n" +
     "</body>\n" +
-    "</html>"
+    "</html>",
+    "<!DOCTYPE html>\n" +
+    "<html>\n" +
+    "<head>\n" +
+    "\t<title>HTML Styles - CSS</title>\n" +
+    "\t<link rel=\"stylesheet\" type=\"text/css\" href=\"testCssStyle.css\">\n" +
+    "</head>\n" +
+    "<body class=\"bg\">\n" +
+    "\t<h1 class=\"textColor\">IT Wisdom Network</h1>\n" +
+    "\t<h2 id=\"textForH2\">We are sharing IT knowledge.</h2>\n" +
+    "</body>\n" +
+    "</html>",
+    ".bg{\n" +
+    "\tbackground-color: powderblue;\n" +
+    "}\n" +
+    "\n" +
+    ".textColor{\n" +
+    "\tcolor: blue;\n" +
+    "\tfont-family: verdana;\n" +
+    "}\n" +
+    "\n" +
+    "#textForH2{\n" +
+    "\tcolor: red;\n" +
+    "}"
 ]
 class Home extends React.Component {
 
@@ -814,7 +837,7 @@ class Home extends React.Component {
                                                                                 </div>
                                                                                 <hr className={`my-7 `}/>
                                                                                 <iframe
-                                                                                    src="https://www.youtube.com/embed/bdhCcSXCg_8?si=kRfuK6fjQ4FX1Wzf&rel=0"
+                                                                                    src="https://www.youtube.com/embed/3s3KE7veCR0?si=eFkeEIds9D0s65Tb&rel=0&autoplay=1"
                                                                                     title="Formatting Elements"
                                                                                     className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
                                                                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -869,17 +892,31 @@ class Home extends React.Component {
                                                                                     External CSS
                                                                                 </div>
                                                                                 <div
+                                                                                    className={`border-2 border-gray-300 rounded-md mb-10`}>
+                                                                                    <div
+                                                                                        className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
+                                                                                        <div>CSS</div>
+                                                                                        <div
+                                                                                            className={`hover:bg-gray-100 font-medium cursor-pointer px-2`}
+                                                                                            onClick={() => this.handleCopyCode(codeStringArrayForHTMLCSS[3])}>Copy
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div className={`p-4`}>
+                                                                                        {this.handleCodeDisplay(codeStringArrayForHTMLCSS[3])}
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div
                                                                                     className={`border-2 border-gray-300 rounded-md`}>
                                                                                     <div
                                                                                         className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
                                                                                         <div>HTML</div>
                                                                                         <div
                                                                                             className={`hover:bg-gray-100 font-medium cursor-pointer px-2`}
-                                                                                            onClick={() => this.handleCopyCode(codeStringArrayForHTMLCSS[1])}>Copy
+                                                                                            onClick={() => this.handleCopyCode(codeStringArrayForHTMLCSS[2])}>Copy
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className={`p-4`}>
-                                                                                        {this.handleCodeDisplay(codeStringArrayForHTMLCSS[1])}
+                                                                                        {this.handleCodeDisplay(codeStringArrayForHTMLCSS[2])}
                                                                                     </div>
                                                                                 </div>
                                                                                 <h3 className={`my-10 font-bold`}>Result :</h3>
