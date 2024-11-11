@@ -8,6 +8,8 @@ import ImgResult4 from "../assets/4.png";
 import ImgResult5 from "../assets/5.png";
 import ImgResult6 from "../assets/6.png";
 import ImgResult7 from "../assets/7.png";
+import ImgResult8 from "../assets/8.png";
+import ImgResult9 from "../assets/9.png";
 import usingNotepad from "../assets/notepad.png"
 import usingNotepad2 from "../assets/usingNotepad2.png"
 
@@ -137,9 +139,54 @@ const codeStringArrayForHTML = [
     "\t<p style=\"font-size: 18px;\">We are sharing IT Knowledge.</p>\n" +
     "\t<p style=\"font-size: 18px; text-align: center;\">We are sharing IT Knowledge.</p>\n" +
     "</body>\n" +
+    "</html>",
+    "<!DOCTYPE html>\n" +
+    "<html>\n" +
+    "<head>\n" +
+    "\t<title>HTML Images</title>\n" +
+    "</head>\n" +
+    "<body>\n" +
+    "\t<img src=\"flower-1.jpg\" style=\"width: 300px; height: 200px;\" alt=\"Pink flower\">\n" +
+    "\t<img src=\"flower-2.png\" style=\"width: 200px; height: 200px;\">\n" +
+    "\t<img src=\"flower-3.png\" style=\"width: 200px; height: 200px;\" alt=\"Pupple flower\">\n" +
+    "\t<img src=\"flower-4.png\" style=\"width: 200px; height: 200px;\" alt=\"Pupple flower\">\n" +
+    "</body>\n" +
     "</html>"
 ]
-
+const codeStringArrayForHTMLCSS=[
+    "<!DOCTYPE html>\n" +
+    "<html>\n" +
+    "<head>\n" +
+    "\t<title>HTML Styles</title>\n" +
+    "</head>\n" +
+    "<body style=\"background-color: powderblue;\">\n" +
+    "\t<h1 style=\"color: blue; font-family: verdana;\">IT Wisdom Network</h1>\n" +
+    "\t<p style=\"font-size: 18px;\">We are sharing IT Knowledge.</p>\n" +
+    "</body>\n" +
+    "</html>",
+    "<!DOCTYPE html>\n" +
+    "<html>\n" +
+    "<head>\n" +
+    "\t<title>HTML Styles</title>\n" +
+    "\t<style type=\"text/css\">\n" +
+    "\t\tbody{\n" +
+    "\t\t\tbackground-color: powderblue;\n" +
+    "\t\t}\n" +
+    "\t\th1{\n" +
+    "\t\t\tcolor: blue;\n" +
+    "\t\t\tfont-family: verdana;\n" +
+    "\t\t}\n" +
+    "\t\tp{\n" +
+    "\t\t\tfont-size: 18px;\n" +
+    "\t\t}\n" +
+    "\t</style>\n" +
+    "</head>\n" +
+    "<body>\n" +
+    "\t<h1>IT Wisdom Network</h1>\n" +
+    "\t<p>We are sharing IT Knowledge.</p>\n" +
+    "</body>\n" +
+    "</html>"
+]
 class Home extends React.Component {
 
     constructor(props) {
@@ -179,8 +226,18 @@ class Home extends React.Component {
                         selected: false,
                     },
                     {
+                        label: "HTML CSS",
+                        value: "css style",
+                        selected: false,
+                    },
+                    {
                         label: "HTML Formatting",
                         value: "formatting",
+                        selected: false,
+                    },
+                    {
+                        label: "HTML Images",
+                        value: "images",
                         selected: false,
                     },
                 ],
@@ -740,7 +797,153 @@ class Home extends React.Component {
                                                                             </div>
                                                                         </div>
                                                                         :
-                                                                    <div className={`text-center`}>Coming Soon...</div>
+                                                                        selectedMenuTitle === "HTML CSS" ?
+                                                                            <div className={`mb-10`}>
+                                                                                <div className={`text-xl mb-5`}>
+                                                                                    CSS stands for Cascading Style Sheets.
+                                                                                </div>
+                                                                                <div
+                                                                                    className={`text-primary font-bold text-xl my-10`}>
+                                                                                    CSS can be added to HTML documents in 3 ways:
+                                                                                </div>
+                                                                                <div className={`mb-10 ml-5 grid grid-cols-1`}
+                                                                                     type={"square"}>
+                                                                                    <li>{"Inline - by using the style attribute inside HTML elements"}</li>
+                                                                                    <li>{"Internal - by using a <style> element in the <head> section"}</li>
+                                                                                    <li>{"External - by using a <link> element to link to an external CSS file"}</li>
+                                                                                </div>
+                                                                                <hr className={`my-7 `}/>
+                                                                                <iframe
+                                                                                    src="https://www.youtube.com/embed/bdhCcSXCg_8?si=kRfuK6fjQ4FX1Wzf&rel=0"
+                                                                                    title="Formatting Elements"
+                                                                                    className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
+                                                                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                                    referrerPolicy="strict-origin-when-cross-origin"
+                                                                                    allowFullScreen></iframe>
+
+                                                                                <hr className={`my-7 `}/>
+                                                                                <div className={`mb-10 font-bold text-lg`}>HTML
+                                                                                    Code
+                                                                                    Example
+                                                                                </div>
+                                                                                <div
+                                                                                    className={`text-primary font-bold text-xl mb-10`}>
+                                                                                    Inline CSS
+                                                                                </div>
+                                                                                <div
+                                                                                    className={`border-2 border-gray-300 rounded-md`}>
+                                                                                    <div
+                                                                                        className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
+                                                                                        <div>HTML</div>
+                                                                                        <div
+                                                                                            className={`hover:bg-gray-100 font-medium cursor-pointer px-2`}
+                                                                                            onClick={() => this.handleCopyCode(codeStringArrayForHTMLCSS[0])}>Copy
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div className={`p-4`}>
+                                                                                        {this.handleCodeDisplay(codeStringArrayForHTMLCSS[0])}
+                                                                                    </div>
+                                                                                </div>
+                                                                                <hr className={`my-7 `}/>
+                                                                                <div
+                                                                                    className={`text-primary font-bold text-xl mb-10`}>
+                                                                                    Internal CSS
+                                                                                </div>
+                                                                                <div
+                                                                                    className={`border-2 border-gray-300 rounded-md`}>
+                                                                                    <div
+                                                                                        className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
+                                                                                        <div>HTML</div>
+                                                                                        <div
+                                                                                            className={`hover:bg-gray-100 font-medium cursor-pointer px-2`}
+                                                                                            onClick={() => this.handleCopyCode(codeStringArrayForHTMLCSS[1])}>Copy
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div className={`p-4`}>
+                                                                                        {this.handleCodeDisplay(codeStringArrayForHTMLCSS[1])}
+                                                                                    </div>
+                                                                                </div>
+                                                                                <hr className={`my-7 `}/>
+                                                                                <div
+                                                                                    className={`text-primary font-bold text-xl mb-10`}>
+                                                                                    External CSS
+                                                                                </div>
+                                                                                <div
+                                                                                    className={`border-2 border-gray-300 rounded-md`}>
+                                                                                    <div
+                                                                                        className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
+                                                                                        <div>HTML</div>
+                                                                                        <div
+                                                                                            className={`hover:bg-gray-100 font-medium cursor-pointer px-2`}
+                                                                                            onClick={() => this.handleCopyCode(codeStringArrayForHTMLCSS[1])}>Copy
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div className={`p-4`}>
+                                                                                        {this.handleCodeDisplay(codeStringArrayForHTMLCSS[1])}
+                                                                                    </div>
+                                                                                </div>
+                                                                                <h3 className={`my-10 font-bold`}>Result :</h3>
+                                                                                <div
+                                                                                    className={`border-2 border-gray-300 rounded-md`}>
+                                                                                    <img src={ImgResult9}/>
+                                                                                </div>
+                                                                            </div>
+                                                                            :
+                                                                            selectedMenuTitle === "HTML Images" ?
+                                                                                <div className={`mb-10`}>
+                                                                                    <div className={`text-xl mb-5`}>
+                                                                                        Images can improve the design and the appearance of a web page.
+                                                                                    </div>
+                                                                                    <div className={`text-xl text-primary font-bold`}>
+                                                                                        {`<img src="url" alt="alternatetext">`}
+                                                                                    </div>
+                                                                                    <div
+                                                                                        className={`text-blue-700 font-bold text-xl my-5`}>Attribute Explanation
+                                                                                    </div>
+                                                                                    <div className={`mb-10 ml-5 grid grid-cols-2`}
+                                                                                         type={"square"}>
+                                                                                        <li>{"src - Specifies the path to the image"}</li>
+                                                                                        <li>{"alt - Specifies an alternate text for the image"}</li>
+                                                                                        <li>{"width - Image width"}</li>
+                                                                                        <li>{"height - Image height"}</li>
+                                                                                        <li>{"style - Image styles"}</li>
+                                                                                    </div>
+                                                                                    <hr className={`my-7 `}/>
+                                                                                    <iframe
+                                                                                        src="https://www.youtube.com/embed/bdhCcSXCg_8?si=kRfuK6fjQ4FX1Wzf&rel=0&autoplay=1"
+                                                                                        title="Formatting Elements"
+                                                                                        className={`w-full md:w-10/12 min-h-[40vh] md:min-h-[60vh] z-0`}
+                                                                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                                                                        referrerPolicy="strict-origin-when-cross-origin"
+                                                                                        allowFullScreen></iframe>
+
+                                                                                    <hr className={`my-7 `}/>
+                                                                                    <div className={`my-10 font-bold text-lg`}>HTML
+                                                                                        Code
+                                                                                        Example
+                                                                                    </div>
+                                                                                    <div
+                                                                                        className={`border-2 border-gray-300 rounded-md`}>
+                                                                                        <div
+                                                                                            className={`flex justify-between gap-4 px-4 border-b border-solid border-gray-300`}>
+                                                                                            <div>HTML</div>
+                                                                                            <div
+                                                                                                className={`hover:bg-gray-100 font-medium cursor-pointer px-2`}
+                                                                                                onClick={() => this.handleCopyCode(codeStringArrayForHTML[8])}>Copy
+                                                                                            </div>
+                                                                                        </div>
+                                                                                        <div className={`p-4`}>
+                                                                                            {this.handleCodeDisplay(codeStringArrayForHTML[8])}
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <h3 className={`my-10 font-bold`}>Result :</h3>
+                                                                                    <div
+                                                                                        className={`border-2 border-gray-300 rounded-md`}>
+                                                                                        <img src={ImgResult8}/>
+                                                                                    </div>
+                                                                                </div>
+                                                                                :
+                                                                        <div className={`text-center`}>Coming Soon...</div>
                                         }
                                     </>
                                 </>
